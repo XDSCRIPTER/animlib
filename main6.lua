@@ -547,6 +547,12 @@ ExtraRightGroup:AddSlider("itemheight", {
     Suffix = " studs",
 })
 
+local MenuGroup = Tabs["UI Settings"]:AddRightGroupbox("Interactions")
+
+MenuGroup:AddDivider()
+MenuGroup:AddLabel("Menu bind")
+	:AddKeyPicker("MenuKeybind", { Default = "RightShift", NoUI = true, Text = "Menu keybind" })
+
 -- Функции из вашего скрипта
 local wscon, hhcon
 local function updws()
@@ -1354,19 +1360,7 @@ task.spawn(function()
     end
 end)
 
-task.spawn(function()
-    while true do
-        if Library.Background then
-            local time = tick()
-            Library.Background.BackgroundColor3 = Color3.fromHSV(
-                (math.sin(time * 0.1) * 0.1 + 0.7) % 1,
-                0.3,
-                0.08
-            )
-        end
-        task.wait(0.1)
-    end
-end)
+
 
 -- Настройка ThemeManager и SaveManager
 ThemeManager:SetLibrary(Library)

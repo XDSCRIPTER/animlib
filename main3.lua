@@ -1354,6 +1354,20 @@ task.spawn(function()
     end
 end)
 
+task.spawn(function()
+    while true do
+        if Library.Background then
+            local time = tick()
+            Library.Background.BackgroundColor3 = Color3.fromHSV(
+                (math.sin(time * 0.1) * 0.1 + 0.7) % 1,
+                0.3,
+                0.08
+            )
+        end
+        task.wait(0.1)
+    end
+end)
+
 -- Настройка ThemeManager и SaveManager
 ThemeManager:SetLibrary(Library)
 ThemeManager:SetFolder("PrivateWeedHub")
@@ -1371,16 +1385,3 @@ Library:Notify("Private Weed Hub loaded successfully!", 5)
 -- Выбор первой вкладки
 Library:SelectTab(1)
 
-task.spawn(function()
-    while true do
-        if Library.Background then
-            local time = tick()
-            Library.Background.BackgroundColor3 = Color3.fromHSV(
-                (math.sin(time * 0.1) * 0.1 + 0.7) % 1,
-                0.3,
-                0.08
-            )
-        end
-        task.wait(0.1)
-    end
-end)

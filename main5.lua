@@ -24,7 +24,7 @@ local Tabs = {
     Pickup = Window:AddTab("Pickup", "backpack"),
     Farming = Window:AddTab("Farming", "sprout"),
     Extra = Window:AddTab("Extra", "plus"),
-    Settings = Window:AddTab("UI Settings", "settings"),
+    ["UI Settings"] = Window:AddTab("UI Settings", "settings"),
 }
 
 -- Инициализация сервисов и переменных
